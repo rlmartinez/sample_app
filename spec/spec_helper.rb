@@ -39,4 +39,7 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  #RLM - added per Chapter 2, p.19
+  config.include Capybara::DSL
 end
