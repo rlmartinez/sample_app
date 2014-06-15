@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
       # Handle a successful save.
+      sign_in @user      
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user    
     else
@@ -29,6 +30,5 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
-
 
 end
